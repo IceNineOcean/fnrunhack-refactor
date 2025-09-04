@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0nlhfg7qus5j"]
+
+[ext_resource type="ArrayMesh" uid="uid://4j07hfsetmgn" path="res://Assets/Meshes/Greeble/Lightbulb.tres" id="1_lwrso"]
+
+[node name="Lightbulb" type="MeshInstance3D"]
+mesh = ExtResource("1_lwrso")
+skeleton = NodePath("")

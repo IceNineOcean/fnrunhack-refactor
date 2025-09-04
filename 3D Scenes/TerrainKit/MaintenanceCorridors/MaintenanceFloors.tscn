@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://vqnuh0ak0dt1"]
+
+[ext_resource type="Shader" uid="uid://bswv0cq5t4far" path="res://Assets/Materials/Shaders/alphatex.gdshader" id="1_sp12c"]
+[ext_resource type="Texture2D" uid="uid://dtnibs6nlphdq" path="res://Assets/Materials/Surfaces/Grating/GratedFloor_basecolor.png" id="2_3wmmg"]
+[ext_resource type="Texture2D" uid="uid://dpf5uw6citugk" path="res://Assets/Materials/Surfaces/Grating/GratedFloor_alpha.png" id="3_yftuy"]
+[ext_resource type="Texture2D" uid="uid://d4gqtt22sd7uw" path="res://Assets/Materials/Surfaces/Grating/GratedFloor_normal.png" id="4_nc25y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_orqpe"]
+render_priority = 0
+shader = ExtResource("1_sp12c")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_3wmmg")
+shader_parameter/texture_alpha = ExtResource("3_yftuy")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("4_nc25y")
+shader_parameter/roughness = 1.0
+shader_parameter/point_size = 1.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ka87a"]
+material = SubResource("ShaderMaterial_orqpe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojx53"]
+size = Vector3(2, 0.1, 2)
+
+[node name="MaintenanceFloors" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_ka87a")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_ojx53")

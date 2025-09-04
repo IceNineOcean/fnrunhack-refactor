@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ykm2lsfhaw7o"]
+
+[ext_resource type="FontFile" uid="uid://de1dkjhto8lgs" path="res://Fonts/Kazesawa-Semibold.ttf" id="1_2k4tq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0lhc"]
+bg_color = Color(0.94568, 0.423326, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2bdw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p0yp"]
+bg_color = Color(0.97104, 0.395117, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwflh"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[resource]
+HBoxContainer/constants/separation = 12
+Label/font_sizes/font_size = 24
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0
+MenuButton/colors/font_color = Color(0, 0, 0, 1)
+MenuButton/font_sizes/font_size = 24
+MenuButton/fonts/font = ExtResource("1_2k4tq")
+Panel/styles/panel = SubResource("StyleBoxFlat_r0lhc")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_g2bdw")
+PopupMenu/fonts/font = ExtResource("1_2k4tq")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_3p0yp")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_kwflh")

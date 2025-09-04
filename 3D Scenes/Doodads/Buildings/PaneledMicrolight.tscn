@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6ol3pkyynbcm"]
+
+[ext_resource type="Material" uid="uid://bfpp5dfnqqalr" path="res://Assets/Materials/Facades/Microlight.tres" id="1_3ay8f"]
+[ext_resource type="Material" uid="uid://ber86o0i2hqaq" path="res://Assets/Materials/Facades/distantorangeconcrete.tres" id="2_d4cx1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3668u"]
+material = ExtResource("1_3ay8f")
+size = Vector3(45, 150, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_upvvd"]
+material = ExtResource("2_d4cx1")
+size = Vector3(47, 15, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_poso7"]
+material = ExtResource("2_d4cx1")
+size = Vector3(47, 3, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bxng3"]
+material = ExtResource("2_d4cx1")
+size = Vector3(47, 8, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r7g8q"]
+material = ExtResource("2_d4cx1")
+size = Vector3(5, 150, 31)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wicqw"]
+material = ExtResource("2_d4cx1")
+size = Vector3(46, 150, 3)
+
+[node name="PaneledMicrolight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3668u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68, 0)
+mesh = SubResource("BoxMesh_upvvd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38, 0)
+mesh = SubResource("BoxMesh_upvvd")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_upvvd")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+mesh = SubResource("BoxMesh_upvvd")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -68, 0)
+mesh = SubResource("BoxMesh_upvvd")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 52, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
+mesh = SubResource("BoxMesh_poso7")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43, 0)
+mesh = SubResource("BoxMesh_bxng3")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -53, 0)
+mesh = SubResource("BoxMesh_bxng3")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("BoxMesh_r7g8q")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wicqw")

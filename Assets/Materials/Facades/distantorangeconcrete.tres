@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://ber86o0i2hqaq"]
+
+[ext_resource type="Texture2D" uid="uid://bl7u0u3unfeyc" path="res://Assets/Materials/Facades/CrackedConcrete/ConcreteCracked_basecolor.png" id="1_bglkd"]
+[ext_resource type="Texture2D" uid="uid://bwta2o7tydod7" path="res://Assets/Materials/Facades/CrackedConcrete/ConcreteCracked_ambientocclusion.png" id="2_6nwhs"]
+[ext_resource type="Texture2D" uid="uid://dq5dt3ehhlw7p" path="res://Assets/Materials/Facades/CrackedConcrete/ConcreteCracked_metallic.png" id="3_r7m4w"]
+[ext_resource type="Texture2D" uid="uid://b4mo35fci7mqf" path="res://Assets/Materials/Facades/CrackedConcrete/ConcreteCracked_normal.png" id="4_7upgq"]
+[ext_resource type="Texture2D" uid="uid://caa8hpxyapujg" path="res://Assets/Materials/Facades/CrackedConcrete/ConcreteCracked_roughness.png" id="5_p1aes"]
+
+[resource]
+albedo_color = Color(0.839693, 0.33981, 0.0154681, 1)
+albedo_texture = ExtResource("1_bglkd")
+metallic = 1.0
+metallic_texture = ExtResource("3_r7m4w")
+roughness_texture = ExtResource("5_p1aes")
+normal_enabled = true
+normal_texture = ExtResource("4_7upgq")
+ao_enabled = true
+ao_texture = ExtResource("2_6nwhs")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true

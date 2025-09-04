@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b440vdoh646xs"]
+
+[ext_resource type="Texture2D" uid="uid://b042tkrjpnasx" path="res://Assets/Materials/Natural/Grassy/dirt_basecolor.png" id="1_vj16u"]
+[ext_resource type="Texture2D" uid="uid://cxs1qnvn0dux8" path="res://Assets/Materials/Natural/Grassy/dirt_ambientocclusion.png" id="2_a07hb"]
+[ext_resource type="Texture2D" uid="uid://bteq8tsgnd0yt" path="res://Assets/Materials/Natural/Grassy/dirt_normal.png" id="3_a1mqd"]
+[ext_resource type="Texture2D" uid="uid://cl15wjunttifo" path="res://Assets/Materials/Natural/Grassy/dirt_roughness.png" id="4_rlqc4"]
+
+[resource]
+albedo_texture = ExtResource("1_vj16u")
+roughness_texture = ExtResource("4_rlqc4")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("3_a1mqd")
+ao_enabled = true
+ao_texture = ExtResource("2_a07hb")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

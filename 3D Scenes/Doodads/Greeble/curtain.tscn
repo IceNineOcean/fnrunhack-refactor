@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvk6ch6l61id6"]
+
+[ext_resource type="ArrayMesh" uid="uid://bfm02a434ocp" path="res://Assets/Meshes/Greeble/CurtainFixed.res" id="1_h2rs2"]
+
+[node name="CurtainLow" type="MeshInstance3D"]
+mesh = ExtResource("1_h2rs2")
+skeleton = NodePath("")

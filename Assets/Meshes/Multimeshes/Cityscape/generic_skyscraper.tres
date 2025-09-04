@@ -1,0 +1,7 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://envcl5gcxgrt"]
+
+[ext_resource type="Material" uid="uid://b12mgst7im3jm" path="res://Assets/Materials/Facades/Dark Modern.tres" id="1_8ft5b"]
+
+[resource]
+material = ExtResource("1_8ft5b")
+size = Vector3(10, 50, 10)

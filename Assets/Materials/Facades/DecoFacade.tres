@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bl4ialnyrhg1y"]
+
+[ext_resource type="Texture2D" uid="uid://fhbc8kuq1eai" path="res://Assets/Materials/Facades/DecoFacade/DecoFacade_basecolor.png" id="1_3ehti"]
+[ext_resource type="Texture2D" uid="uid://8e8i2gvodo7" path="res://Assets/Materials/Facades/DecoFacade/DecoFacade_ambientocclusion.png" id="2_ksdg5"]
+[ext_resource type="Texture2D" uid="uid://31dllfoaxcfu" path="res://Assets/Materials/Facades/DecoFacade/DecoFacade_metallic.png" id="3_uc5av"]
+[ext_resource type="Texture2D" uid="uid://d2inqc6nlev7s" path="res://Assets/Materials/Facades/DecoFacade/DecoFacade_normal.png" id="4_81on7"]
+[ext_resource type="Texture2D" uid="uid://dqx55fnbachxs" path="res://Assets/Materials/Facades/DecoFacade/DecoFacade_roughness.png" id="5_wtchf"]
+
+[resource]
+albedo_texture = ExtResource("1_3ehti")
+metallic = 1.0
+metallic_texture = ExtResource("3_uc5av")
+roughness_texture = ExtResource("5_wtchf")
+emission = Color(0.331548, 0.321222, 0.0920111, 1)
+emission_operator = 1
+emission_texture = ExtResource("3_uc5av")
+normal_enabled = true
+normal_texture = ExtResource("4_81on7")
+ao_enabled = true
+ao_texture = ExtResource("2_ksdg5")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(0.25, 0, 0.25)
+uv1_triplanar = true

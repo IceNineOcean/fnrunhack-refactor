@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://dr4p6sj1deu8u"]
+
+[ext_resource type="Texture2D" uid="uid://cqvvbvv26ox0c" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_basecolor.png" id="1_7em1u"]
+[ext_resource type="Texture2D" uid="uid://cmnuehp5nrud" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_ambientocclusion.png" id="2_0xn3g"]
+[ext_resource type="Texture2D" uid="uid://tcoiukaykocr" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_emissive.png" id="3_2s6gc"]
+[ext_resource type="Texture2D" uid="uid://crio7evqktcyy" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_metallic.png" id="4_o28pa"]
+[ext_resource type="Texture2D" uid="uid://m1mhm64vpkk7" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_normal.png" id="5_qsdai"]
+[ext_resource type="Texture2D" uid="uid://0piktijfsq35" path="res://Assets/Materials/Facades/IlluminatedOne/Dense_Window_Light_roughness.png" id="6_ouxxj"]
+
+[resource]
+albedo_texture = ExtResource("1_7em1u")
+metallic = 1.0
+metallic_texture = ExtResource("4_o28pa")
+roughness_texture = ExtResource("6_ouxxj")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+emission_operator = 1
+emission_texture = ExtResource("3_2s6gc")
+normal_enabled = true
+normal_texture = ExtResource("5_qsdai")
+ao_enabled = true
+ao_texture = ExtResource("2_0xn3g")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

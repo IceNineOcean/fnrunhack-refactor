@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://ctg6753idvgnc"]
+
+[ext_resource type="Texture2D" uid="uid://b0r3nkl2y311" path="res://Assets/Materials/Textures/Rocket/R2X Rocket_Base_color.png" id="1_us2i5"]
+[ext_resource type="Texture2D" uid="uid://cbol6v28wjf6v" path="res://Assets/Materials/Textures/Rocket/R2X Rocket_Mixed_AO.png" id="2_8fkjw"]
+[ext_resource type="Texture2D" uid="uid://crjr83d3l4jnq" path="res://Assets/Materials/Textures/Rocket/R2X Rocket_Metallic.png" id="3_qaxxk"]
+[ext_resource type="Texture2D" uid="uid://drht2me0rcoje" path="res://Assets/Materials/Textures/Rocket/R2X Rocket_Normal_OpenGL.png" id="4_dkvi0"]
+[ext_resource type="Texture2D" uid="uid://d05mhstehji0n" path="res://Assets/Materials/Textures/Rocket/R2X Rocket_Roughness.png" id="5_01x6v"]
+
+[resource]
+albedo_texture = ExtResource("1_us2i5")
+metallic = 1.0
+metallic_texture = ExtResource("3_qaxxk")
+roughness_texture = ExtResource("5_01x6v")
+normal_enabled = true
+normal_texture = ExtResource("4_dkvi0")
+ao_enabled = true
+ao_texture = ExtResource("2_8fkjw")

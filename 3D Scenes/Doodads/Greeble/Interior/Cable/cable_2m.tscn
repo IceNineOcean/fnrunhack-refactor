@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://w0bagx6h2uye"]
+
+[ext_resource type="ArrayMesh" uid="uid://clcxmfr8u3piv" path="res://Assets/Meshes/Greeble/Cable2m.tres" id="1_1oamp"]
+
+[node name="Cable_2m" type="MeshInstance3D"]
+mesh = ExtResource("1_1oamp")
+skeleton = NodePath("")

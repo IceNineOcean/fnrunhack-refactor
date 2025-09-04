@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://mn62k1fm5lwv"]
+
+[ext_resource type="Texture2D" uid="uid://6hwvrv3v67ye" path="res://Assets/Materials/Textures/Lightbulb/Lit/Lightbulb_LowPolyNormal_BaseColor.png" id="1_xbo8u"]
+[ext_resource type="Texture2D" uid="uid://b33lovb5gyu2k" path="res://Assets/Materials/Textures/Lightbulb/Lit/Lightbulb_LowPolyNormal_Emissive.png" id="2_kd3lw"]
+[ext_resource type="Texture2D" uid="uid://d4a5s4sk8y62y" path="res://Assets/Materials/Textures/Lightbulb/Lit/Lightbulb_LowPolyNormal_Metallic.png" id="3_s5gsi"]
+[ext_resource type="Texture2D" uid="uid://5p16oxbotgkr" path="res://Assets/Materials/Textures/Lightbulb/Lit/Lightbulb_LowPolyNormal_Normal.png" id="4_8lri5"]
+[ext_resource type="Texture2D" uid="uid://c0hpb4yu7g50h" path="res://Assets/Materials/Textures/Lightbulb/Lit/Lightbulb_LowPolyNormal_Roughness.png" id="5_reiby"]
+
+[resource]
+albedo_texture = ExtResource("1_xbo8u")
+metallic = 1.0
+metallic_texture = ExtResource("3_s5gsi")
+roughness_texture = ExtResource("5_reiby")
+emission_enabled = true
+emission_texture = ExtResource("2_kd3lw")
+normal_enabled = true
+normal_texture = ExtResource("4_8lri5")

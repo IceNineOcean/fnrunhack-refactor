@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dxnnoclak5y6l"]
+
+[ext_resource type="Texture2D" uid="uid://beqttqql8fsq1" path="res://Assets/Materials/Facades/ChainlinkFence/chainlink_fence_basecolor.png" id="1_f88ob"]
+[ext_resource type="Texture2D" uid="uid://br05ba7fdcyq0" path="res://Assets/Materials/Facades/ChainlinkFence/chainlink_fence_ambientocclusion.png" id="2_q754n"]
+[ext_resource type="Texture2D" uid="uid://ctnwle4wbvi1e" path="res://Assets/Materials/Facades/ChainlinkFence/chainlink_fence_metallic.png" id="3_2e6qi"]
+[ext_resource type="Texture2D" uid="uid://bn2odppdok3vs" path="res://Assets/Materials/Facades/ChainlinkFence/chainlink_fence_normal.png" id="4_l4nd6"]
+[ext_resource type="Texture2D" uid="uid://d0u2brtj2j3qr" path="res://Assets/Materials/Facades/ChainlinkFence/chainlink_fence_roughness.png" id="5_oi8h8"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_f88ob")
+metallic = 1.0
+metallic_texture = ExtResource("3_2e6qi")
+roughness_texture = ExtResource("5_oi8h8")
+normal_enabled = true
+normal_texture = ExtResource("4_l4nd6")
+ao_enabled = true
+ao_texture = ExtResource("2_q754n")

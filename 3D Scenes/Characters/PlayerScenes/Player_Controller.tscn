@@ -1,0 +1,304 @@
+[gd_scene load_steps=25 format=3 uid="uid://dr36xlborats1"]
+
+[ext_resource type="Script" uid="uid://clcpj8bwjisu0" path="res://Scripts/PlayerScripts/player_controller.gd" id="1_dm4p1"]
+[ext_resource type="Script" uid="uid://d1xhqmex1gey1" path="res://Scripts/PlayerScripts/camera_controller.gd" id="1_ka5tj"]
+[ext_resource type="Script" uid="uid://blq5n8ercv01" path="res://Scripts/PlayerScripts/mouse_capture_component.gd" id="1_o0mgw"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="2_efrjd"]
+[ext_resource type="Script" uid="uid://cdlvl0aqgsn5f" path="res://Scripts/PlayerScripts/camera_effects.gd" id="4_lq8cq"]
+[ext_resource type="Script" uid="uid://c8xlaq63kewlo" path="res://Scripts/PlayerScripts/interaction_raycast.gd" id="4_lqexe"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="4_n8lhs"]
+[ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="5_wu4v6"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="6_uofi0"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_07ega"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_q3680"]
+[ext_resource type="Script" uid="uid://duicuwwix643l" path="res://Scripts/PlayerScripts/state_machine.gd" id="9_el5gj"]
+[ext_resource type="Script" uid="uid://bsamd55eul1py" path="res://Scripts/PlayerScripts/idle_state.gd" id="10_dd4af"]
+[ext_resource type="Script" uid="uid://bsace88itr0e4" path="res://Scripts/PlayerScripts/grounded_state.gd" id="11_wuxti"]
+[ext_resource type="Script" uid="uid://nqwgfge7lss3" path="res://Scripts/PlayerScripts/moving_state.gd" id="12_6gn6y"]
+[ext_resource type="Script" uid="uid://dwwfedvsnus6o" path="res://Scripts/PlayerScripts/walking_state.gd" id="13_0xjcj"]
+[ext_resource type="Script" uid="uid://b3756er166pse" path="res://Scripts/PlayerScripts/sprinting_state.gd" id="14_eim3l"]
+[ext_resource type="Script" uid="uid://cwqb2qblns2un" path="res://Scripts/PlayerScripts/standing_state.gd" id="15_ttpg5"]
+[ext_resource type="Script" uid="uid://d1kgfd280bhfa" path="res://Scripts/PlayerScripts/airborne_state.gd" id="16_gb7ab"]
+[ext_resource type="Script" uid="uid://l7ulu4ksti3c" path="res://Scripts/PlayerScripts/crouching_state.gd" id="16_idfuu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j1ayi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g80w4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_benmr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rbn47"]
+
+[node name="PlayerController" type="CharacterBody3D" node_paths=PackedStringArray("camera", "camera_effects", "state_chart", "standing_collision", "crouching_collision", "crouch_check", "interaction_raycast")]
+platform_floor_layers = 4294967293
+script = ExtResource("1_dm4p1")
+camera = NodePath("CameraController")
+camera_effects = NodePath("CameraController/Camera3D")
+state_chart = NodePath("StateChart")
+standing_collision = NodePath("StandingCollision")
+crouching_collision = NodePath("CrouchingCollision")
+crouch_check = NodePath("CrouchCheck")
+interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
+
+[node name="StateChartDebugger" parent="." instance=ExtResource("2_efrjd")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 329.0
+offset_bottom = 276.0
+grow_horizontal = 1
+grow_vertical = 1
+initial_node_to_watch = NodePath("../StateChart")
+
+[node name="PlaceholderMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_j1ayi")
+
+[node name="StandingCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_g80w4")
+
+[node name="CrouchingCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_benmr")
+
+[node name="CrouchCheck" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_rbn47")
+target_position = Vector3(0, 0.5, 0)
+
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("player_controller", "component_mouse_capture")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_ka5tj")
+player_controller = NodePath("..")
+component_mouse_capture = NodePath("../Components/MouseCaptureComponent")
+
+[node name="Camera3D" type="Camera3D" parent="CameraController" node_paths=PackedStringArray("player")]
+script = ExtResource("4_lq8cq")
+player = NodePath("../..")
+
+[node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D"]
+target_position = Vector3(0, 0, -3)
+script = ExtResource("4_lqexe")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="MouseCaptureComponent" type="Node" parent="Components"]
+script = ExtResource("1_o0mgw")
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("4_n8lhs")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("5_wu4v6")
+
+[node name="Movement" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Grounded")
+
+[node name="Grounded" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root/Movement/Grounded"]
+script = ExtResource("7_07ega")
+
+[node name="OnMoving" type="Node" parent="StateChart/Root/Movement/Grounded/Idle"]
+script = ExtResource("8_q3680")
+to = NodePath("../../Moving")
+event = &"onMoving"
+delay_in_seconds = "0.0"
+
+[node name="Moving" type="Node" parent="StateChart/Root/Movement/Grounded"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Walking")
+
+[node name="Walking" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("7_07ega")
+
+[node name="Sprinting" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("7_07ega")
+
+[node name="OnIdle" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("8_q3680")
+to = NodePath("../../Idle")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+
+[node name="OnWalking" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("8_q3680")
+to = NodePath("../Walking")
+event = &"onWalking"
+delay_in_seconds = "0.0"
+
+[node name="OnSprinting" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("8_q3680")
+to = NodePath("../Sprinting")
+event = &"onSprinting"
+delay_in_seconds = "0.0"
+
+[node name="OnAirborne" type="Node" parent="StateChart/Root/Movement/Grounded/Moving"]
+script = ExtResource("8_q3680")
+to = NodePath("../../../Airborne")
+event = &"onAirborne"
+delay_in_seconds = "0.0"
+
+[node name="Airborne" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Jumping")
+
+[node name="Jumping" type="Node" parent="StateChart/Root/Movement/Airborne"]
+script = ExtResource("7_07ega")
+
+[node name="OnGrounded" type="Node" parent="StateChart/Root/Movement/Airborne"]
+script = ExtResource("8_q3680")
+to = NodePath("../../Grounded")
+event = &"onGrounded"
+delay_in_seconds = "0.0"
+
+[node name="Wallrunning" type="Node" parent="StateChart/Root/Movement"]
+script = ExtResource("6_uofi0")
+
+[node name="Posture" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Standing")
+
+[node name="Standing" type="Node" parent="StateChart/Root/Posture"]
+script = ExtResource("7_07ega")
+
+[node name="Crouching" type="Node" parent="StateChart/Root/Posture"]
+script = ExtResource("7_07ega")
+
+[node name="OnStanding" type="Node" parent="StateChart/Root/Posture"]
+script = ExtResource("8_q3680")
+to = NodePath("../Standing")
+event = &"onStanding"
+delay_in_seconds = "0.0"
+
+[node name="OnCrouching" type="Node" parent="StateChart/Root/Posture"]
+script = ExtResource("8_q3680")
+to = NodePath("../Crouching")
+event = &"onCrouching"
+delay_in_seconds = "0.0"
+
+[node name="Hands" type="Node" parent="StateChart/Root"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Empty")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Empty" type="Node" parent="StateChart/Root/Hands"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Carry" type="Node" parent="StateChart/Root/Hands"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Interact" type="Node" parent="StateChart/Root/Hands"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Holster" type="Node" parent="StateChart/Root/Hands"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Wield" type="Node" parent="StateChart/Root/Hands"]
+script = ExtResource("6_uofi0")
+initial_state = NodePath("Fire")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Fire" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Swing" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Reload" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Tinker" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Block" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Channel" type="Node" parent="StateChart/Root/Hands/Wield"]
+script = ExtResource("7_07ega")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("player_controller")]
+unique_name_in_owner = true
+script = ExtResource("9_el5gj")
+player_controller = NodePath("..")
+
+[node name="MovementState" type="Node" parent="StateMachine"]
+
+[node name="GroundedState" type="Node" parent="StateMachine/MovementState"]
+script = ExtResource("11_wuxti")
+
+[node name="IdleState" type="Node" parent="StateMachine/MovementState/GroundedState"]
+script = ExtResource("10_dd4af")
+
+[node name="MovingState" type="Node" parent="StateMachine/MovementState/GroundedState"]
+script = ExtResource("12_6gn6y")
+
+[node name="WalkingState" type="Node" parent="StateMachine/MovementState/GroundedState/MovingState"]
+script = ExtResource("13_0xjcj")
+
+[node name="SprintingState" type="Node" parent="StateMachine/MovementState/GroundedState/MovingState"]
+script = ExtResource("14_eim3l")
+
+[node name="AirborneState" type="Node" parent="StateMachine/MovementState"]
+script = ExtResource("16_gb7ab")
+
+[node name="JumpingState" type="Node" parent="StateMachine/MovementState/AirborneState"]
+
+[node name="WallrunningState" type="Node" parent="StateMachine/MovementState"]
+
+[node name="PostureState" type="Node" parent="StateMachine"]
+
+[node name="StandingState" type="Node" parent="StateMachine/PostureState"]
+script = ExtResource("15_ttpg5")
+
+[node name="CrouchingState" type="Node" parent="StateMachine/PostureState"]
+script = ExtResource("16_idfuu")
+
+[node name="HandsState" type="Node" parent="StateMachine"]
+
+[node name="EmptyState" type="Node" parent="StateMachine/HandsState"]
+
+[node name="CarryState" type="Node" parent="StateMachine/HandsState"]
+
+[node name="InteractState" type="Node" parent="StateMachine/HandsState"]
+
+[node name="HolsterState" type="Node" parent="StateMachine/HandsState"]
+
+[node name="WieldState" type="Node" parent="StateMachine/HandsState"]
+
+[node name="FireState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[node name="SwingState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[node name="ReloadState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[node name="TinkerState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[node name="BlockState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[node name="ChannelState" type="Node" parent="StateMachine/HandsState/WieldState"]
+
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded" to="StateMachine/MovementState/GroundedState" method="_on_grounded_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/GroundedState/IdleState" method="_on_idle_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Moving" to="StateMachine/MovementState/GroundedState/MovingState" method="_on_moving_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/GroundedState/MovingState/WalkingState" method="_on_walking_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/GroundedState/MovingState/SprintingState" method="_on_sprinting_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Airborne" to="StateMachine/MovementState/AirborneState" method="_on_airborne_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Posture/Standing" to="StateMachine/PostureState/StandingState" method="_on_standing_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Posture/Standing" to="StateMachine/PostureState/StandingState" method="_on_standing_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Posture/Crouching" to="StateMachine/PostureState/CrouchingState" method="_on_crouching_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Posture/Crouching" to="StateMachine/PostureState/CrouchingState" method="_on_crouching_state_physics_processing"]

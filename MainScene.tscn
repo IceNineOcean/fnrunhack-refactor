@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://djgbqkwgpn2y0"]
+
+[ext_resource type="PackedScene" uid="uid://bntra4x1v2ero" path="res://3D Scenes/Stages/Hightown.tscn" id="1_byrns"]
+[ext_resource type="Script" uid="uid://y327krymk5rm" path="res://Scripts/UIScripts/reticle_draw.gd" id="1_quysd"]
+[ext_resource type="Script" uid="uid://cq0m58jpshr85" path="res://Scripts/game_manager.gd" id="1_xmq1e"]
+
+[node name="MainScene" type="Node"]
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="GameManager" type="Node" parent="Managers"]
+script = ExtResource("1_xmq1e")
+
+[node name="CurrentLevel" type="Node3D" parent="."]
+
+[node name="Hightown" parent="CurrentLevel" instance=ExtResource("1_byrns")]
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="Reticle" type="CenterContainer" parent="UserInterface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReticleDraw" type="Control" parent="UserInterface/Reticle"]
+layout_mode = 2
+script = ExtResource("1_quysd")
+radius = 24.0
+static_color = Color(0.827, 0.827, 0.827, 0.65)
+gap_angle = 40.0
+segments = 8

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://wolq3va4sy6g"]
+
+[ext_resource type="Texture2D" uid="uid://bg8bjbg3g4qfc" path="res://Assets/Materials/Textures/StallCounters/Red/StallCounter_Base_color.png" id="1_v2uia"]
+[ext_resource type="Texture2D" uid="uid://dre1wg0h8maq5" path="res://Assets/Materials/Textures/StallCounters/Red/StallCounter_Mixed_AO.png" id="2_fm48f"]
+[ext_resource type="Texture2D" uid="uid://csa1vdkmig1ui" path="res://Assets/Materials/Textures/StallCounters/Red/StallCounter_Metallic.png" id="3_7tj2w"]
+[ext_resource type="Texture2D" uid="uid://6lo083dfaf0t" path="res://Assets/Materials/Textures/StallCounters/Red/StallCounter_Normal_OpenGL.png" id="4_byywi"]
+[ext_resource type="Texture2D" uid="uid://cxda8krjgcupf" path="res://Assets/Materials/Textures/StallCounters/Red/StallCounter_Roughness.png" id="5_kdpbb"]
+
+[resource]
+albedo_texture = ExtResource("1_v2uia")
+metallic = 1.0
+metallic_texture = ExtResource("3_7tj2w")
+roughness_texture = ExtResource("5_kdpbb")
+normal_enabled = true
+normal_texture = ExtResource("4_byywi")
+ao_enabled = true
+ao_texture = ExtResource("2_fm48f")

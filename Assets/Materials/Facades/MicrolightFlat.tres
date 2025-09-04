@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ry2v38chvu6f"]
+
+[ext_resource type="Texture2D" uid="uid://cclxjlx25wkuq" path="res://Assets/Materials/Facades/MicrolightFacade/MicrolightFacade_basecolor.png" id="1_r3b2o"]
+[ext_resource type="Texture2D" uid="uid://ch0k1mwoppm37" path="res://Assets/Materials/Facades/MicrolightFacade/MicrolightFacade_ambientocclusion.png" id="2_qhdb8"]
+[ext_resource type="Texture2D" uid="uid://balrtao1ds6bu" path="res://Assets/Materials/Facades/MicrolightFacade/MicrolightFacade_normal.png" id="3_0wk6r"]
+[ext_resource type="Texture2D" uid="uid://d0rcrcxxickrc" path="res://Assets/Materials/Facades/MicrolightFacade/MicrolightFacade_roughness.png" id="4_xkrlu"]
+
+[resource]
+albedo_texture = ExtResource("1_r3b2o")
+metallic = 1.0
+roughness_texture = ExtResource("4_xkrlu")
+emission_enabled = true
+emission_texture = ExtResource("1_r3b2o")
+normal_enabled = true
+normal_texture = ExtResource("3_0wk6r")
+ao_enabled = true
+ao_texture = ExtResource("2_qhdb8")
+uv1_scale = Vector3(8, 8, 8)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmiwhojwnd821"]
+
+[ext_resource type="ArrayMesh" uid="uid://cr62ek438eohp" path="res://Assets/Meshes/TerrainKit/Stairs10m.res" id="1_517ya"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1plng"]
+points = PackedVector3Array(5, 5, 7.6, -5, 5, 7.6, -5, 5, 7.3, 5, 5, 7.3, 5, -5, -7.9, -5, -5, -7.9, 5, -5, 7.6, -5, -5, 7.6)
+
+[node name="Stairs10m" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -7.6)
+mesh = ExtResource("1_517ya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -7.6)
+shape = SubResource("ConvexPolygonShape3D_1plng")

@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://dk20dfxl3cama"]
+
+[ext_resource type="Script" uid="uid://dh5w4ngmdke5q" path="res://Scripts/UIScripts/npc_dialogue.gd" id="1_hqdqf"]
+[ext_resource type="StyleBox" uid="uid://3bgt06sm2okm" path="res://UX Scenes/BlackFlatStyleBox.tres" id="1_nf6ow"]
+[ext_resource type="Theme" uid="uid://ykm2lsfhaw7o" path="res://Themes/michaelsoftbinbows.tres" id="2_hqdqf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb7nu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv3ak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf6ow"]
+bg_color = Color(0.806613, 0.537014, 1.92523e-07, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqdqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb7nu"]
+bg_color = Color(0.902711, 0.689814, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv3ak"]
+bg_color = Color(0.8, 0.53, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72b45"]
+bg_color = Color(0.9, 0.68, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msiif"]
+
+[node name="NpcDialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hqdqf")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wb7nu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+theme_override_styles/panel = ExtResource("1_nf6ow")
+
+[node name="DialogueHistory" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_hqdqf")
+text = "Previous Line"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rv3ak")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+theme_override_styles/panel = ExtResource("1_nf6ow")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="DialogueBox" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_hqdqf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/DialogueBox"]
+layout_mode = 2
+
+[node name="NPCName" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/DialogueBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "[Name]"
+
+[node name="Dialogue" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/DialogueBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Current Line"
+
+[node name="Response" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/DialogueBox"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.299547, 0.299547, 0.299547, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_nf6ow")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hqdqf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wb7nu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rv3ak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_72b45")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_msiif")
+text = "1. Response 1"
+alignment = 0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhcwwyv11h8at"]
+
+[ext_resource type="Script" uid="uid://cgxselc7gi1xa" path="res://3D Scenes/CameraTank.gd" id="1_dxvn4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ct07b"]
+radius = 0.3
+height = 0.6
+radial_segments = 8
+rings = 8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sv3rj"]
+radius = 0.3
+
+[node name="CameraDroneController" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER", "Pivot")]
+script = ExtResource("1_dxvn4")
+CAMERA_CONTROLLER = NodePath("Pivot/Camera3D")
+Pivot = NodePath("Pivot")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ct07b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_sv3rj")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]

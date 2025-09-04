@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bfclp5jo843t3"]
+
+[ext_resource type="Texture2D" uid="uid://y7bmytc6q5dl" path="res://Assets/Materials/Textures/VTOL/VTOL_VTOLTextures_BaseColor.png" id="1_l4vif"]
+[ext_resource type="Texture2D" uid="uid://bexwk16ri3x57" path="res://Assets/Materials/Textures/VTOL/VTOL_VTOLTextures_Height.png" id="2_dtxa1"]
+[ext_resource type="Texture2D" uid="uid://d3l7allmx1fes" path="res://Assets/Materials/Textures/VTOL/VTOL_VTOLTextures_Metallic.png" id="3_4xvx6"]
+[ext_resource type="Texture2D" uid="uid://lyiamhte08em" path="res://Assets/Materials/Textures/VTOL/VTOL_VTOLTextures_Normal.png" id="4_4tqyc"]
+[ext_resource type="Texture2D" uid="uid://bu8lo33pth506" path="res://Assets/Materials/Textures/VTOL/VTOL_VTOLTextures_Roughness.png" id="5_rjf3l"]
+
+[resource]
+albedo_texture = ExtResource("1_l4vif")
+metallic = 1.0
+metallic_texture = ExtResource("3_4xvx6")
+roughness_texture = ExtResource("5_rjf3l")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("4_4tqyc")
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_dtxa1")

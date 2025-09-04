@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://c3vrlsue61j7o"]
+
+[ext_resource type="Texture2D" uid="uid://it4687djjfyk" path="res://Assets/Materials/Textures/Shelving/GreenTarnished/DefaultMaterial_Base_color.png" id="1_ktw03"]
+[ext_resource type="Texture2D" uid="uid://comojy48ojpon" path="res://Assets/Materials/Textures/Shelving/GreenTarnished/DefaultMaterial_Mixed_AO.png" id="2_mgkuj"]
+[ext_resource type="Texture2D" uid="uid://br0b71172foqa" path="res://Assets/Materials/Textures/Shelving/GreenTarnished/DefaultMaterial_Metallic.png" id="3_74rx7"]
+[ext_resource type="Texture2D" uid="uid://bqdqea0u8gbvf" path="res://Assets/Materials/Textures/Shelving/GreenTarnished/DefaultMaterial_Normal_OpenGL.png" id="4_txob3"]
+[ext_resource type="Texture2D" uid="uid://b0er4c0cymc20" path="res://Assets/Materials/Textures/Shelving/GreenTarnished/DefaultMaterial_Roughness.png" id="5_qxnc3"]
+
+[resource]
+albedo_texture = ExtResource("1_ktw03")
+metallic = 1.0
+metallic_texture = ExtResource("3_74rx7")
+roughness_texture = ExtResource("5_qxnc3")
+normal_enabled = true
+normal_texture = ExtResource("4_txob3")
+ao_enabled = true
+ao_light_affect = 0.54
+ao_texture = ExtResource("2_mgkuj")

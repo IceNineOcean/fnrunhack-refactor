@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8r4yfeekq84h"]
+
+[ext_resource type="Texture2D" uid="uid://bdmgqwxukiapl" path="res://Assets/Materials/Textures/CorrugatedMetal/corrugated metal_Material.001_BaseColor.png" id="1_2gj8g"]
+[ext_resource type="Texture2D" uid="uid://binynpn5ugeqh" path="res://Assets/Materials/Textures/CorrugatedMetal/corrugated metal_Material.001_Metallic.png" id="2_wrex0"]
+[ext_resource type="Texture2D" uid="uid://opevtql3bde4" path="res://Assets/Materials/Textures/CorrugatedMetal/corrugated metal_Material.001_Normal.png" id="3_d6al4"]
+[ext_resource type="Texture2D" uid="uid://8wvswuxbgj3o" path="res://Assets/Materials/Textures/CorrugatedMetal/corrugated metal_Material.001_Roughness.png" id="4_yd018"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trjhl"]
+cull_mode = 2
+albedo_texture = ExtResource("1_2gj8g")
+metallic = 1.0
+metallic_texture = ExtResource("2_wrex0")
+roughness_texture = ExtResource("4_yd018")
+normal_enabled = true
+normal_texture = ExtResource("3_d6al4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rujkx"]
+material = SubResource("StandardMaterial3D_trjhl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6lrn"]
+size = Vector3(2, 0.03, 2)
+
+[node name="CorrugatedMetal" type="StaticBody3D"]
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_rujkx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d6lrn")

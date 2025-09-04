@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://80f668j3ubbt"]
+
+[ext_resource type="FontFile" uid="uid://de1dkjhto8lgs" path="res://Fonts/Kazesawa-Semibold.ttf" id="1_61pne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51h7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oswpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omsn3"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.162066, 0.162066, 0.162065, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p60k"]
+bg_color = Color(0, 0.458824, 0.803922, 0.12549)
+border_width_right = 1
+border_color = Color(0, 0.458824, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oki6k"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s7st"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_top = 2
+border_color = Color(0, 0.458824, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmxnl"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[resource]
+default_font = ExtResource("1_61pne")
+Label/fonts/font = ExtResource("1_61pne")
+MarginContainer/constants/margin_bottom = 5
+MarginContainer/constants/margin_left = 5
+MarginContainer/constants/margin_right = 5
+MarginContainer/constants/margin_top = 5
+Panel/styles/panel = SubResource("StyleBoxEmpty_51h7o")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_oswpo")
+TabBar/colors/drop_mark_color = Color(0, 0.458824, 0.803922, 1)
+TabBar/colors/font_disabled_color = Color(0, 0.388235, 0.686275, 0.501961)
+TabBar/colors/font_hovered_color = Color(0, 0.458824, 0.803922, 1)
+TabBar/colors/font_selected_color = Color(0, 0.458824, 0.803922, 1)
+TabBar/colors/font_unselected_color = Color(0, 0.278467, 0.502433, 1)
+TabContainer/colors/drop_mark_color = Color(0, 0.458824, 0.803922, 1)
+TabContainer/colors/font_disabled_color = Color(0, 0.271067, 0.490064, 0.501961)
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_omsn3")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_4p60k")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_oki6k")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_0s7st")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_cmxnl")
+TextEdit/constants/line_spacing = 0

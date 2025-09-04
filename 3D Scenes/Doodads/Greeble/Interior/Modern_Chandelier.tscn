@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv6l4h6gxg3pi"]
+
+[ext_resource type="ArrayMesh" uid="uid://clcxmfr8u3piv" path="res://Assets/Meshes/Greeble/Cable2m.tres" id="1_m5nqg"]
+[ext_resource type="ArrayMesh" uid="uid://4j07hfsetmgn" path="res://Assets/Meshes/Greeble/Lightbulb.tres" id="2_24g5b"]
+[ext_resource type="Material" uid="uid://yjoqq20ux2ob" path="res://Assets/Materials/Facades/DarkConcreteTriplanar.tres" id="3_4lqbp"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gg376"]
+material = ExtResource("3_4lqbp")
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n3hne"]
+height = 1.0
+
+[node name="Modern_Chandelier" type="Node3D"]
+
+[node name="Cable_2m" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.168042)
+mesh = ExtResource("1_m5nqg")
+skeleton = NodePath("")
+
+[node name="Lightbulb" type="MeshInstance3D" parent="Cable_2m"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13666, 0)
+mesh = ExtResource("2_24g5b")
+skeleton = NodePath("")
+
+[node name="Cable_2m2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.286022, -0.40955, -0.158268)
+mesh = ExtResource("1_m5nqg")
+skeleton = NodePath("")
+
+[node name="Lightbulb" type="MeshInstance3D" parent="Cable_2m2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13666, 0)
+mesh = ExtResource("2_24g5b")
+skeleton = NodePath("")
+
+[node name="Cable_2m3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294018, 0.37081, -0.158268)
+mesh = ExtResource("1_m5nqg")
+skeleton = NodePath("")
+
+[node name="Lightbulb" type="MeshInstance3D" parent="Cable_2m3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13666, 0)
+mesh = ExtResource("2_24g5b")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CylinderMesh_gg376")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_n3hne")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23427, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ntrkquhdlqy7"]
+
+[ext_resource type="ArrayMesh" uid="uid://y5p5s41dbdy8" path="res://Assets/Meshes/Greeble/10mrailing.tres" id="1_6qh2q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggir0"]
+size = Vector3(10, 1, 0.1)
+
+[node name="10railing" type="StaticBody3D"]
+collision_mask = 7
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6qh2q")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ggir0")

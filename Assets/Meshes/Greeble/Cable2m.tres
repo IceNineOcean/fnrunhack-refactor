@@ -1,0 +1,35 @@
+[gd_resource type="ArrayMesh" load_steps=3 format=4 uid="uid://clcxmfr8u3piv"]
+
+[ext_resource type="Material" uid="uid://d2t3l64g57cs2" path="res://Assets/Materials/Textures/Cable/Cable2m.tres" id="1_snecd"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8tedn"]
+_surfaces = [{
+"aabb": AABB(-0.0124732, -1, -0.0124732, 0.0249464, 2, 0.0249464),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("DAADAA0ADAACAAMACAAHAAkACAAGAAcADgAFAA8ADgAEAAUACgABAAsACgAAAAEABAALAAUABAAKAAsAAgAJAAMAAgAIAAkABgAPAAcABgAOAA8AAAANAAEAAAAMAA0A"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("fSUAAIHaAAB9Jf//gdoAAH0lAAB9JQAAfSX//30lAACB2gAAgdoAAIHa//+B2gAAgdoAAH0lAACB2v//fSUAAP9/AAAAAAAA/3///wAAAAD/fwAA//8AAP9//////wAAAAAAAP9/AAAAAP///38AAP//AAD/fwAA//////9/AAA=")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "cable2m_Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.0124732, -1, -0.0124732, 0.0249464, 2, 0.0249464),
+"attribute_data": PackedByteArray("CQUAAAkF//8AAAAAHwcAAAAA//8fB///8wIAAFgIAADzAv//WAj//xYCAAAWAv//3QAAAN0A///QAwAA0AP//+YFAADmBf//8wIAAB8HAADzAv//Hwf//w=="),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("EAAFABEAEAADAAUADAALAA0ADAAKAAsAEwAJABUAEwAHAAkADgABAA8ADgAAAAEABgAPAAgABgAOAA8AAgANAAQAAgAMAA0ACgAUAAsACgASABQAAAARAAEAAAAQABEA"),
+"material": ExtResource("1_snecd"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("fSUAAIHa//99Jf//gdr//30lAAB9Jf//fSUAAH0l//99Jf//fSX//30l//99Jf//gdoAAIHa//+B2gAAgdr//4Ha//+B2v//gdr//4Ha//+B2gAAfSX//4Ha//99Jf///38AAAAA////f///AAD///9/AAD//////3////////8AAAAA/3///wAA////f/////8AAP9//////wAA/3//////////f/////////9///+CWv9/glr/f///fKX//3yl//98pf//fKV8pf9/fKX/f3yl/398pf9/gdr/f4Ha/3////9/////f/9//3//f/9//z//f/8//3//v/9//7//f/+//3//v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8tedn")

@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b8bfsbufynat1"]
+
+[ext_resource type="Texture2D" uid="uid://cl8ae056llu0x" path="res://Assets/Materials/Facades/VersaillesFloor/Versailles_Floor_basecolor.png" id="1_wcibv"]
+[ext_resource type="Texture2D" uid="uid://dghywx3r0byh" path="res://Assets/Materials/Facades/VersaillesFloor/Versailles_Floor_ambientocclusion.png" id="2_fv58j"]
+[ext_resource type="Texture2D" uid="uid://ducjvhvtk1ync" path="res://Assets/Materials/Facades/VersaillesFloor/Versailles_Floor_normal.png" id="3_qgaew"]
+[ext_resource type="Texture2D" uid="uid://bifllkhlua0pv" path="res://Assets/Materials/Facades/VersaillesFloor/Versailles_Floor_roughness.png" id="4_40ros"]
+
+[resource]
+albedo_texture = ExtResource("1_wcibv")
+roughness_texture = ExtResource("4_40ros")
+normal_enabled = true
+normal_texture = ExtResource("3_qgaew")
+ao_enabled = true
+ao_light_affect = 0.43
+ao_texture = ExtResource("2_fv58j")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

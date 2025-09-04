@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://5o570m5q1pe2"]
+
+[ext_resource type="Texture2D" uid="uid://155v435yqc87" path="res://Assets/Materials/Textures/Railings/StairRail/10mstairrailing_10mstairrailing_BaseColor.png" id="1_32aoj"]
+[ext_resource type="Texture2D" uid="uid://bicbf71n0w7hb" path="res://Assets/Materials/Textures/Railings/StairRail/10mstairrailing_10mstairrailing_Metallic.png" id="2_3r42k"]
+[ext_resource type="Texture2D" uid="uid://dcervqwavijdo" path="res://Assets/Materials/Textures/Railings/StairRail/10mstairrailing_10mstairrailing_Normal.png" id="3_bj2dn"]
+[ext_resource type="Texture2D" uid="uid://dg3ep6hpex3n1" path="res://Assets/Materials/Textures/Railings/StairRail/10mstairrailing_10mstairrailing_Roughness.png" id="4_5afvk"]
+
+[resource]
+albedo_texture = ExtResource("1_32aoj")
+metallic = 1.0
+metallic_texture = ExtResource("2_3r42k")
+roughness_texture = ExtResource("4_5afvk")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("3_bj2dn")

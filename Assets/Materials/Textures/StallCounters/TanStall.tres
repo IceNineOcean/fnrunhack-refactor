@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://c7l86ngetboio"]
+
+[ext_resource type="Texture2D" uid="uid://b0pp7ouda28gg" path="res://Assets/Materials/Textures/StallCounters/Tan/StallCounter_Base_color.png" id="1_d8few"]
+[ext_resource type="Texture2D" uid="uid://ilb8efpfl4bo" path="res://Assets/Materials/Textures/StallCounters/Tan/StallCounter_Mixed_AO.png" id="2_6f33s"]
+[ext_resource type="Texture2D" uid="uid://gkxabs646qyp" path="res://Assets/Materials/Textures/StallCounters/Tan/StallCounter_Metallic.png" id="3_58pu5"]
+[ext_resource type="Texture2D" uid="uid://7egjpcgughyo" path="res://Assets/Materials/Textures/StallCounters/Tan/StallCounter_Normal_OpenGL.png" id="4_0nayg"]
+[ext_resource type="Texture2D" uid="uid://c6pxh317box1d" path="res://Assets/Materials/Textures/StallCounters/Tan/StallCounter_Roughness.png" id="5_ae1ea"]
+
+[resource]
+albedo_texture = ExtResource("1_d8few")
+metallic = 1.0
+metallic_texture = ExtResource("3_58pu5")
+roughness_texture = ExtResource("5_ae1ea")
+normal_enabled = true
+normal_texture = ExtResource("4_0nayg")
+ao_enabled = true
+ao_texture = ExtResource("2_6f33s")

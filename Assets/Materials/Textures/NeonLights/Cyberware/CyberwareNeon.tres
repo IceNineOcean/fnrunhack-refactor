@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://1out8g2nc8tf"]
+
+[ext_resource type="Texture2D" uid="uid://0cu87525vffh" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Base_color.png" id="1_op673"]
+[ext_resource type="Texture2D" uid="uid://csaytwv5xpjlk" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Mixed_AO.png" id="2_8g2c6"]
+[ext_resource type="Texture2D" uid="uid://0luw45i2mb4v" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Emissive.png" id="3_ndo8f"]
+[ext_resource type="Texture2D" uid="uid://buf8glr68ruic" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Metallic.png" id="4_3hedh"]
+[ext_resource type="Texture2D" uid="uid://bdskc7egq37bx" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Normal_OpenGL.png" id="5_l827e"]
+[ext_resource type="Texture2D" uid="uid://cn6ohq2sfevul" path="res://Assets/Materials/Textures/NeonLights/Cyberware/Cyberware Sign_Roughness.png" id="6_he1io"]
+
+[resource]
+albedo_texture = ExtResource("1_op673")
+metallic = 1.0
+metallic_texture = ExtResource("4_3hedh")
+roughness_texture = ExtResource("6_he1io")
+emission_enabled = true
+emission_texture = ExtResource("3_ndo8f")
+normal_enabled = true
+normal_texture = ExtResource("5_l827e")
+ao_enabled = true
+ao_texture = ExtResource("2_8g2c6")

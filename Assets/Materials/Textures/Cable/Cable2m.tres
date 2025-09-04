@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d2t3l64g57cs2"]
+
+[ext_resource type="Texture2D" uid="uid://c08jnf5msoqf4" path="res://Assets/Materials/Textures/Cable/cable2m_Material.001_BaseColor.png" id="1_3wcxv"]
+[ext_resource type="Texture2D" uid="uid://7vk3kdqssirw" path="res://Assets/Materials/Textures/Cable/cable2m_Material.001_Metallic.png" id="2_6fy3y"]
+[ext_resource type="Texture2D" uid="uid://cp4fkkqx72cp6" path="res://Assets/Materials/Textures/Cable/cable2m_Material.001_Normal.png" id="3_kyu4f"]
+[ext_resource type="Texture2D" uid="uid://qtgjbhry8mje" path="res://Assets/Materials/Textures/Cable/cable2m_Material.001_Roughness.png" id="4_l1bnt"]
+
+[resource]
+albedo_texture = ExtResource("1_3wcxv")
+metallic = 1.0
+metallic_texture = ExtResource("2_6fy3y")
+roughness_texture = ExtResource("4_l1bnt")
+normal_enabled = true
+normal_texture = ExtResource("3_kyu4f")

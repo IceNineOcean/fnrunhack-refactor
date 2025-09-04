@@ -1,0 +1,143 @@
+[gd_scene load_steps=7 format=3 uid="uid://8ncdvunrs5pb"]
+
+[ext_resource type="Material" uid="uid://yjoqq20ux2ob" path="res://Assets/Materials/Facades/DarkConcreteTriplanar.tres" id="1_gl4v1"]
+[ext_resource type="Material" uid="uid://bj2jakq0wdfvb" path="res://Assets/Materials/BlackFog.tres" id="2_mndnl"]
+[ext_resource type="PackedScene" uid="uid://b8r4yfeekq84h" path="res://3D Scenes/Doodads/Greeble/Sheets/CorrugatedMetal.tscn" id="3_42n27"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8tghm"]
+material = ExtResource("1_gl4v1")
+top_radius = 3.0
+bottom_radius = 5.0
+height = 0.5
+radial_segments = 18
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_0gbrp"]
+material = ExtResource("1_gl4v1")
+size = Vector3(1.737, 2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_un72e"]
+material = ExtResource("1_gl4v1")
+size = Vector3(1.737, 0.1, 0.5)
+
+[node name="Topround" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("CylinderMesh_8tghm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 0.75, 0)
+mesh = SubResource("BoxMesh_0gbrp")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, -4.392, 0.75, 1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -4.392, 0.75, -1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -3.58, 0.75, -3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -3.58, 0.75, 3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 0.75, 0)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, -4.392, 0.75, 1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -4.392, 0.75, -1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -3.58, 0.75, -3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -3.58, 0.75, 3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 0.75, 0)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, -4.392, 0.75, 1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -4.392, 0.75, -1.599)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -3.58, 0.75, -3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -3.58, 0.75, 3.004)
+mesh = SubResource("BoxMesh_0gbrp")
+skeleton = NodePath("../..")
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 1.7, 0)
+mesh = SubResource("BoxMesh_un72e")
+skeleton = NodePath("../..")
+
+[node name="Node3D4" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 1.7, 0)
+mesh = SubResource("BoxMesh_un72e")
+skeleton = NodePath("../..")
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.674, 1.7, 0)
+mesh = SubResource("BoxMesh_un72e")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+light_color = Color(0, 1, 1, 1)
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.5
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+size = Vector3(8, 1.75, 8)
+shape = 2
+material = ExtResource("2_mndnl")
+
+[node name="CorrugatedMetal" parent="." instance=ExtResource("3_42n27")]
+transform = Transform3D(-0.384815, -0.858147, 0.339854, -0.91319, 0.407502, -0.00503928, -0.134167, -0.312291, -0.940465, -4.96582, 0.683493, -1.92853)
